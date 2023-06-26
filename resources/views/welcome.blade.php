@@ -24,8 +24,9 @@
             <label>
                 Ingredientes: 
             </label>
-            <form>
-                <input type="text"/>
+            <form method="post" action="{{route('ingredientsAction')}}">
+                @csrf
+                <input type="text" name="ingredients"/>
                 <input type="submit" value="Gere as receitas"/>
             </form>
         </article>

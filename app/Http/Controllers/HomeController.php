@@ -11,4 +11,9 @@ class HomeController extends Controller
     {
         return view('welcome');
     }
+
+    public function ingredientsAction(Request $r): View 
+    {
+        dd($r->all());
+    }
 }
