@@ -27,9 +27,12 @@
             <form method="post" action="{{route('ingredientsAction')}}">
                 @csrf
                 <input type="text" name="ingredients"/>
-                <input type="submit" value="Gere as receitas"/>
+                <input type="submit" value="Gere as receitas" value="{{$ingredients ?? ''}}"/>
             </form>
         </article>
+        @if(!empty($receita))
+            {{!! preg_replace('/\r\n|n/', '<br>', $receita) !!}}
+        @endif
     </main>
     <footer>
         Anna Carolina Braga - 2023
