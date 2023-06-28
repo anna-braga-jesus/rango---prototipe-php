@@ -34,7 +34,7 @@ class HomeController extends Controller
             'json' => [
                 'model'=> 'text-davinci-003',
                 'prompt' => 'Gere uma receita incrível SOMENTE com os seguintes ingredientes:' 
-                . $r->ingredientsAction,
+                . $r->ingredients,
                 'temperature' => 0.5,
                 'max_tokens' => 500,
             ],
@@ -43,7 +43,7 @@ class HomeController extends Controller
         if ($response->getStatusCode() == 200){
         $data = json_decode($response-> getBody(), true);
         $viewData['recipe']= $data['choices'][0]['text']; 
-        $viewData['ingredients'] = $r -> ingredientsAction;
+        $viewData['ingredients'] = $r -> ingredients;
         return view('welcome', $viewData);
         } else {
             return ['error'=> 'Deu algum erro!'];

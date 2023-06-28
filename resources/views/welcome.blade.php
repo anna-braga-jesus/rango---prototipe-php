@@ -26,8 +26,8 @@
             </label>
             <form method="post" action="{{route('ingredientsAction')}}">
                 @csrf
-                <input type="text" name="ingredients"/>
-                <input type="submit" value="Gere as receitas" value="{{$ingredients ?? ''}}"/>
+                <input type="text" name="ingredients" value="{{$ingredients ?? ''}}"/>
+                <input type="submit" value="Gere as receitas" />
             </form>
         </article>
         @if(!empty($receita))
