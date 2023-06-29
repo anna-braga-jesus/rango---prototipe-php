@@ -10,10 +10,19 @@ use Dotenv\Dotenv;
 
 class HomeController extends Controller
 {
-    public function index(Request $r): View
-    {
-        return view('welcome');
+    public function index(): View {
+        return view('home');
     }
+
+    public function ingredientsController(Request $r): View
+    {
+        return view('ingredients');
+    }
+    public function perfil(Request $r): View
+    {
+        return view('perfil');
+    }
+
 
     public function ingredientsAction(Request $r): View 
     {
@@ -44,7 +53,7 @@ class HomeController extends Controller
         $data = json_decode($response-> getBody(), true);
         $viewData['recipe']= $data['choices'][0]['text']; 
         $viewData['ingredients'] = $r -> ingredients;
-        return view('welcome', $viewData);
+        return view('ingredients', $viewData);
         } else {
             return ['error'=> 'Deu algum erro!'];
         }

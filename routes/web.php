@@ -14,7 +14,8 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
-
+Route::get('/', [HomeController::class, 'index'] );
+Route::get('/ingredients', [HomeController::class, 'ingredientsController']);
 Route::post('/ingredients', [HomeController::class, 'ingredientsAction'])
 -> name('ingredientsAction');
+Route::get('/perfil', [HomeController::class, 'perfil']);

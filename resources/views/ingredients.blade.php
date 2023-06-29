@@ -10,7 +10,10 @@
 </head>
 <body>
     <header>
-        <h1> Rango 🤖</h1>
+        <h1> Gerador de receitas 🤖</h1>
+        <nav>
+            <a href="/"> Voltar </a>
+        </nav>
     </header>
     <main>
         <h2>Gerador de receitas </h2>
